@@ -6,9 +6,11 @@ def main_process(RPAobject):
     pass
 
 if __name__ == '__main__':
+    try:
+        myRPA = RPA(CONNECTION_PATH)
+    except:
+        raise Exception(CONNECTION_PATH+" 파일을 확인해주세요.")
+    
     print("Python RPA 수행 시작")
-    myRPA = RPA(CONNECTION_PATH) 
-    # Python 자동화 시작 #    
     main_process(myRPA)
-    # Python 자동화 완료 #
     print("Python RPA 수행 완료")
