@@ -6,8 +6,10 @@ def ModviewProcess():
     time.sleep(1.5)
     
     Check_Before = len(list(pyautogui.locateAllOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/Plus.PNG"))) # Plus 개수 확인
-
-    pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG"), button='right') # Final Shape 우클릭
+    if len(list(pyautogui.locateAllOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape_Blue.PNG"))) > 0:
+        pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape_Blue.PNG"), button='right') # Final Shape Blue 우클릭
+    if len(list(pyautogui.locateAllOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG"))) > 0:
+        pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG"), button='right') # Final Shape 우클릭
     time.sleep(1.5)
     pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/Level_Expand.PNG")) # 레벨확장 클릭
     time.sleep(1.5)
@@ -33,7 +35,10 @@ def ModviewProcess():
     if Check_After > Check_Before: # 도면 2개 확인
         pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/ModelBrowser.PNG")) # 모델브라우저 클릭
         time.sleep(1.5)
-        pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG")) # Final Shape 클릭
+        if len(list(pyautogui.locateAllOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape_Blue.PNG"))) > 0:
+            pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape_Blue.PNG")) # Final Shape Blue 우클릭
+        if len(list(pyautogui.locateAllOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG"))) > 0:
+            pyautogui.click(pyautogui.locateOnScreen("D:/Uipath/SW_QC_P16/data/master/img_data/FinalShape.PNG")) # Final Shape 우클릭
         time.sleep(1.5)
         pyautogui.press('down')
         time.sleep(1.5)
